@@ -17,7 +17,7 @@ int	ft_dispatch(va_list arg, char c)
 	int	count;
 
 	if (c == 'c')
-		count =	ft_putchar_count(va_arg(arg, char c));
+		count = ft_putchar_count(va_arg(arg, char c));
 	if (c == 's')
 		count = ft_putstr_count(va_arg(arg, char *str));
 	if (c == 'p')
@@ -25,11 +25,11 @@ int	ft_dispatch(va_list arg, char c)
 	if (c == 'd' || c == 'i')
 		count = ft_putnbr_count(va_arg(arg, int i));
 	if (c == 'u')
-		count = ft_putunsnber_count(va_arg(arg, unsigned int i));
+		count = ft_putunsnbr_count(va_arg(arg, unsigned int i));
 	if (c == 'X')
-    
+		count = ft_puthexamaj_count(va_arg(arg, int i));
 	if (c == 'x')
-
+		count = ft_puthexamin_count(va_arg(arg, int i));
 	if (c == '%')
 
 	return (count);
