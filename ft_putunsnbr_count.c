@@ -19,13 +19,14 @@ static int	ft_countchar(int n)
 	len = 1;
 	while (n >= 9)
 	{
-		n /= 10;
+	n /= 10;
 		len++;
 	}
 	return (len);
+}
 
 int	ft_putunsnbr_count(unsigned int i)
-{				
+{
 	if (!i)
 		return (0);
 	if (i > 9)

@@ -27,7 +27,7 @@ int	ft_dispatch(va_list arg, char c)
 	if (c == 'u')
 		count = ft_putunsnber_count(va_arg(arg, unsigned int i));
 	if (c == 'X')
-
+    
 	if (c == 'x')
 
 	if (c == '%')

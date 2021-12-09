@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 
-
 static int	ft_countchar(int n)
 {
 	int	len;
@@ -24,6 +23,7 @@ static int	ft_countchar(int n)
 		len++;
 	}
 	return (len);
+}
 
 int	ft_putlongnbr_count(unsigned long long int i)
 {				
