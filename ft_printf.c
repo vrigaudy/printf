@@ -6,34 +6,34 @@
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:44:55 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/08 16:29:50 by vrigaudy         ###   ########.fr       */
+/*   Updated: 2021/12/13 17:03:08 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_prinft(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list	arg;
-	int		i;
 	int		count;
 
 	if (!str)
 		return (0);
-	i = 0;
 	count = 0;
 	va_start(arg, str);
-	while (str[i])
+	while (*str)
 	{
-		if (str[i] == '%')
+		if (*str == '%')
 		{
-			count += ft_dispatch(arg, str[i + 1]);
+			ft_dispatch(arg, *(str + 1), &count);
 			str += 2;
 		}
 		else
-			ft_putchar_fd(str[i], 1);
-		i++;
+		{
+			ft_putchar(*str, &count);
+			str++;
+		}
 	}
-	va_end(arg, str);
-	return (count + i);
+	va_end(arg);
+	return (count);
 }

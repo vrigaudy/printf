@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_count.c                                 :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 21:57:39 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/07 09:25:04 by vrigaudy         ###   ########.fr       */
+/*   Created: 2021/12/13 15:55:54 by vrigaudy          #+#    #+#             */
+/*   Updated: 2021/12/13 19:06:55 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-int	ft_putchar_count(char c)
+void	ft_putnbr(int i, int *count)
 {
-	write(1, &c, 1);
-	return (1);
+	unsigned int	nb;
+
+	nb = i;
+	if (i < 0)
+	{
+		nb = -nb;
+		ft_putchar('-', count);
+	}
+	if (nb > 9)
+	{
+		ft_putnbr(nb / 10, count);
+		ft_putnbr(nb % 10, count);
+	}
+	else
+		ft_putchar(nb + '0', count);
 }

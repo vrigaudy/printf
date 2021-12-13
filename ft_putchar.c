@@ -1,13 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthexamaj_count.c                              :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vrigaudy <vrigaudy@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/10 22:53:57 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/10 22:54:00 by vrigaudy         ###   ########.fr       */
+/*   Created: 2021/12/13 14:56:29 by vrigaudy          #+#    #+#             */
+/*   Updated: 2021/12/13 16:27:02 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
+void	ft_putchar(char c, int *count)
+{
+	write(1, &c, 1);
+	*count = *count + 1;
+}

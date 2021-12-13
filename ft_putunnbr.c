@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_count.c                                  :+:      :+:    :+:   */
+/*   ft_putunnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/07 16:27:51 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/08 13:15:24 by vrigaudy         ###   ########.fr       */
+/*   Created: 2021/12/13 17:14:20 by vrigaudy          #+#    #+#             */
+/*   Updated: 2021/12/13 17:18:56 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr_count(int i)
+void	ft_putunnbr(unsigned int i, int *count)
 {
-	char	*str;
-	int		len;
-
-	str = ft_itoa(i);
-	len = ft_strlen(str);
-	ft_putstr_fd(1, str);
-	free(str);
-	return (len);
+	if (i > 9)
+	{
+		ft_putunnbr(i / 10, count);
+		ft_putunnbr(i % 10, count);
+	}
+	else
+		ft_putchar(i + '0', count);
 }

@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_count.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/06 22:22:52 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/07 10:11:56 by vrigaudy         ###   ########.fr       */
+/*   Created: 2021/12/13 17:55:08 by vrigaudy          #+#    #+#             */
+/*   Updated: 2021/12/13 19:11:24 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr_count(char *str)
+void	ft_putnbr_base(unsigned long long int i, char *base, int *count)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		write(1, &str[i++], 1);
-	return (i);
+	if (i >= (unsigned long long int)ft_strlen(base))
+	{
+		ft_putnbr_base(i / ft_strlen(base), base, count);
+		ft_putnbr_base(i % ft_strlen(base), base, count);
+	}
+	else
+		ft_putchar(base[i], count);
 }
