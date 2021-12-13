@@ -6,16 +6,18 @@
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 19:01:37 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/13 19:04:57 by vrigaudy         ###   ########.fr       */
+/*   Updated: 2021/12/13 22:36:54 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include "ft_printf.h"
+
+int	ft_strlen(const char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 		i++;
-	return(i);
+	return (i);
 }

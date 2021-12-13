@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbru.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 15:43:08 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/13 20:15:29 by vrigaudy         ###   ########.fr       */
+/*   Created: 2021/12/13 22:07:04 by vrigaudy          #+#    #+#             */
+/*   Updated: 2021/12/13 22:22:18 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str, int *count)
+void	ft_putnbru(unsigned int i, int *count)
 {
-	if (!str)
-		ft_putstr("(null)", count);
-	else
+	if (i > 9)
 	{
-		while (*str)
-		{
-			ft_putchar(*str, count);
-			str++;
-		}
+		ft_putnbru(i / 10, count);
+		ft_putnbru(i % 10, count);
 	}
+	else
+		ft_putchar(i + '0', count);
 }
