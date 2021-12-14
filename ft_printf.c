@@ -6,7 +6,7 @@
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 12:44:55 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/13 22:13:47 by vrigaudy         ###   ########.fr       */
+/*   Updated: 2021/12/14 20:32:21 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,27 +37,30 @@ int	ft_printf(const char *str, ...)
 	va_end(arg);
 	return (count);
 }
-/*
+
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 
 int	main(void)
 {
-	unsigned long long int	s;
-	int				i;
-	int				j;
-
-	s = 18446744073709551615;
-	ft_printf("=== COMPARE PRINT ===\n");
-	ft_printf("ft_printf -> ");
-	i = ft_printf("%u\n", s);
-	printf("printf    -> ");
-	j = printf("%u\n", s);
-	ft_printf("=== RETURN PRINTF ===\n");
-	printf("ft_printf -> %d\nprintf    -> %d\n", i, j);
-	ft_printf("=== RETURN FT_PRINTF ===\n");
-	ft_printf("ft_printf -> %d\nprintf    -> %d", i, j);
+	ft_printf("=========== COMPARE PRINT ===========\n");
+	ft_printf("\n------------- LONG_MIN --------------\n");
+	ft_printf("ft_printf  ->  %p\n", -2147483647);
+	printf("printf     ->  %p\n", 2147483647);
+	ft_printf("-------------------------------------\n");
+	ft_printf("\n------------- LONG_MAX --------------\n");
+	ft_printf("ft_printf  ->  %p\n", -2147483647);
+	printf("printf     ->  %p\n", 2147483647);
+	ft_printf("-------------------------------------\n");
+	ft_printf("\n------------- ULONG_MAX -------------\n");
+	ft_printf("ft_printf  ->  %p\n", -2147483647);
+	printf("printf     ->  %p\n", 2147483647);
+	ft_printf("-------------------------------------\n");
+	ft_printf("\n------------ -ULONG_MAX -------------\n");
+	ft_printf("ft_printf  ->  %p\n", -2147483647);
+	printf("printf     ->  %p\n", 2147483647);
+	ft_printf("-------------------------------------\n");
+	ft_printf("\n=====================================\n");
 	return (0);
 }
-*/

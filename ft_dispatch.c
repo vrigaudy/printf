@@ -6,7 +6,7 @@
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 19:31:43 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/13 22:52:41 by vrigaudy         ###   ########.fr       */
+/*   Updated: 2021/12/14 20:03:22 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	ft_dispatch(va_list arg, char c, int *count)
 	if (c == 'p')
 	{
 		ft_putstr("0x", count);
-		ft_putnbradd_base(va_arg(arg, unsigned long long int), basemin, count);
+		ft_putnbradd_base(va_arg(arg, unsigned long int), basemin, count);
 	}
 	if (c == '%')
 		ft_putchar('%', count);
