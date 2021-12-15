@@ -6,7 +6,7 @@
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 13:17:25 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/14 20:03:58 by vrigaudy         ###   ########.fr       */
+/*   Updated: 2021/12/15 16:29:32 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_putchar(char c, int *count);
 void	ft_putstr(char *str, int *count);
 void	ft_putnbru(unsigned int i, int *count);
 void	ft_dispatch(va_list arg, char c, int *count);
-void	ft_putnbr_base(unsigned int i, char *base, int *count);
-void	ft_putnbradd_base(unsigned long int i, char *base, int *count);
+void	ft_putnbr_base(unsigned long int i, char *base, int *count);
 
 #endif
