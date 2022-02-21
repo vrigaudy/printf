@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 14:56:29 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/13 16:27:02 by vrigaudy         ###   ########.fr       */
+/*   Created: 2021/12/13 19:01:37 by vrigaudy          #+#    #+#             */
+/*   Updated: 2021/12/13 22:36:54 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, int *count)
+int	ft_strlen_pf(const char *str)
 {
-	write(1, &c, 1);
-	*count = *count + 1;
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

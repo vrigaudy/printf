@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(unsigned long int i, char *base, int *count)
+void	ft_putnbr_base_pf(unsigned long int i, char *base, int *count)
 {
-	if (i >= (unsigned long int)ft_strlen(base))
+	if (i >= (unsigned long int)ft_strlen_pf(base))
 	{
-		ft_putnbr_base(i / ft_strlen(base), base, count);
-		ft_putnbr_base(i % ft_strlen(base), base, count);
+		ft_putnbr_base_pf(i / ft_strlen_pf(base), base, count);
+		ft_putnbr_base_pf(i % ft_strlen_pf(base), base, count);
 	}
 	else
-		ft_putchar(base[i], count);
+		ft_putchar_pf(base[i], count);
 }

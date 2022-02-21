@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-void	ft_putnbru(unsigned int i, int *count)
+void	ft_putnbru_pf(unsigned int i, int *count)
 {
 	if (i > 9)
 	{
-		ft_putnbru(i / 10, count);
-		ft_putnbru(i % 10, count);
+		ft_putnbru_pf(i / 10, count);
+		ft_putnbru_pf(i % 10, count);
 	}
 	else
-		ft_putchar(i + '0', count);
+		ft_putchar_pf(i + '0', count);
 }

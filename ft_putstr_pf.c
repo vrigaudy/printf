@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrigaudy <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/13 15:55:54 by vrigaudy          #+#    #+#             */
-/*   Updated: 2021/12/13 19:06:55 by vrigaudy         ###   ########.fr       */
+/*   Created: 2021/12/13 15:43:08 by vrigaudy          #+#    #+#             */
+/*   Updated: 2021/12/13 20:15:29 by vrigaudy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int i, int *count)
+void	ft_putstr_pf(char *str, int *count)
 {
-	unsigned int	nb;
-
-	nb = i;
-	if (i < 0)
-	{
-		nb = -nb;
-		ft_putchar('-', count);
-	}
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10, count);
-		ft_putnbr(nb % 10, count);
-	}
+	if (!str)
+		ft_putstr_pf("(null)", count);
 	else
-		ft_putchar(nb + '0', count);
+	{
+		while (*str)
+		{
+			ft_putchar_pf(*str, count);
+			str++;
+		}
+	}
 }

@@ -30,7 +30,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar(*str, &count);
+			ft_putchar_pf(*str, &count);
 			str++;
 		}
 	}
